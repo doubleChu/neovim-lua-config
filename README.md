@@ -1,59 +1,67 @@
-> 本文由 [简悦 SimpRead](http://ksria.com/simpread/) 转码， 原文地址 [nvchad.github.io](https://nvchad.github.io/quickstart/install#pre-requisites)
+原地址 [nvchad.github.io](https://nvchad.github.io/quickstart/install#pre-requisites)
 
-> Try in docker container
-
-Try in docker container[​](#try-in-docker-container "Direct link to heading")
+在Docker容器中尝试
 -----------------------------------------------------------------------------
 
-This will leave your current Neovim configuration untouched. Once you exit Neovim, the image is deleted.
+这将保持当前的Neovim配置不变。一旦退出Neovim，Docker image将被删除。
 
 ```
-docker run -w /root -it --rm alpine:edge sh -uelic '    apk add git nodejs neovim ripgrep alpine-sdk --update    git clone https://github.com/NvChad/NvChad ~/.config/nvim    nvim    '
+docker run -w /root -it --rm alpine:edge sh -uelic '
+   apk add git nodejs neovim ripgrep alpine-sdk --update
+   git clone https://github.com/NvChad/NvChad ~/.config/nvim
+   nvim
+   '
 ```
 
-Pre-requisites[​](#pre-requisites "Direct link to heading")
+预先准备
 -----------------------------------------------------------
 
 *   [Neovim 0.7.0](https://github.com/neovim/neovim/releases/tag/v0.7.0)
-*   If neovim's very old for your OS then consider trying this [neovim version manager](https://github.com/MordechaiHadad/bob)
-*   [Use a Nerd Font](https://www.nerdfonts.com/) in your terminal emulator.
+*   如果neovim对你的操作系统来说很老，那么考虑试试这个[Neovim版本管理器](https://github.com/MordechaiHadad/bob)
+*   在使用的终端中[使用一种Nerd Font](https://www.nerdfonts.com/).
 
-### Semi-optional[​](#semi-optional "Direct link to heading")
+### 半可选
 
-*   [`ripgrep`](https://github.com/BurntSushi/ripgrep) is required for grep searching with _Telescope_
+*   _Telescope_ 在grep搜索时需要 [`ripgrep`](https://github.com/BurntSushi/ripgrep)
 
-Install[​](#install "Direct link to heading")
+安装
 ---------------------------------------------
 
-### Linux/macos (UNIX)[​](#linuxmacos-unix "Direct link to heading")
+### Linux/MacOS
 
 ```
 git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
 ```
 
-### Windows[​](#windows "Direct link to heading")
+### Windows
 
 ```
 git clone https://github.com/NvChad/NvChad $HOME\AppData\Local\nvim --depth 1 && nvim
 ```
 
-(Note: windows users must have [`mingw`](http://mingw-w64.org/doku.php) installed & set on path)
+(注意: Windows 必须安装 [`mingw`](http://mingw-w64.org/doku.php) 或者将其设置在Path中)
 
-Update[​](#update "Direct link to heading")
+更新
 -------------------------------------------
 
-NvChad has an update mechanism built-in, which will pull any new updates to the git repository.
+NvChad 有一个内置的更新机制，它将把任何新的更新拉到git存储库中。
 
-*   Update nvchad by pressing `<leader> + uu`
+*   通过按下 `<leader> + uu` 来更新NvChad
     
-*   **Note**: by NvChad default, `<leader>` is the `<space>` key
+*   **注意**: 在 NvChad 默认设置中, `<leader>` 为 `<space>` 按键
     
 
-This will open a prompt in NeoVim warning you that it is about to do a `git reset --hard` and **you will lose any customisations** you've made to NvChad outside the custom folder
+这将在NeoVim中打开一个提示，警告您它即将执行 `git reset --hard` 并且 **您将失去任何** 在custom文件夹外进行过的自定义更改
 
-Uninstall[​](#uninstall "Direct link to heading")
+卸载
 -------------------------------------------------
 
 ```
-# linux/macos (unix)rm -rf ~/.config/nvimrm -rf ~/.local/share/nvimrm -rf ~/.cache/nvim# windowsrd -r ~\AppData\Local\nvimrd -r ~\AppData\Local\nvim-data
+# linux/MacOS (unix)
+rm -rf ~/.config/nvim
+rm -rf ~/.local/share/nvim
+rm -rf ~/.cache/nvim
+# Windows
+rd -r ~\AppData\Local\nvim
+rd -r ~\AppData\Local\nvim-data
 ```

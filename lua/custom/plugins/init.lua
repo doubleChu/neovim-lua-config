@@ -28,5 +28,8 @@ return{
   end,
      wants = {"nvim-treesitter"},
      after = {"nvim-cmp"}
+  },
+  ["ellisonleao/glow.nvim"] = {
+
   }
 }
