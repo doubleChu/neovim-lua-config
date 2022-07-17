@@ -29,7 +29,9 @@ return{
      wants = {"nvim-treesitter"},
      after = {"nvim-cmp"}
   },
-  ["ellisonleao/glow.nvim"] = {
-
-  }
+  ["iamcco/markdown-preview.nvim"] = {
+     run = function()
+        vim.fn["mkdp#util#install"]()
+     end,
+  },
 }
