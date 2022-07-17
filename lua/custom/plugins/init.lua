@@ -34,4 +34,8 @@ return{
         vim.fn["mkdp#util#install"]()
      end,
   },
+  -- 开启dashboard
+  ["goolord/alpha-nvim"] = {
+    disable = false,
+  },
 }
