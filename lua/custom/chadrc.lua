@@ -9,6 +9,8 @@ M.ui = {
    theme = "everforest",
 }
 
+M.mappings = require "custom.mappings"
+
 M.plugins = {
    user = require "custom.plugins",
    options = {
