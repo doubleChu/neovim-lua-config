@@ -30,13 +30,13 @@ docker run -w /root -it --rm alpine:edge sh -uelic '
 ### Linux/MacOS
 
 ```
-git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
+git clone https://e.coding.net/biteme/L_dotfiles/neovim-nvchad ~/.config/nvim --depth 1 && nvim
 ```
 
 ### Windows
 
 ```
-git clone https://github.com/NvChad/NvChad $HOME\AppData\Local\nvim --depth 1 && nvim
+git clone https://e.coding.net/biteme/L_dotfiles/neovim-nvchad $HOME\AppData\Local\nvim --depth 1 && nvim
 ```
 
 (注意: Windows 必须安装 [`mingw`](http://mingw-w64.org/doku.php) 或者将其设置在Path中)
