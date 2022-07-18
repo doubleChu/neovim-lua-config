@@ -29,13 +29,13 @@ docker run -w /root -it --rm alpine:edge sh -uelic '
 
 ### Linux/MacOS
 
-```
+```shell
 git clone https://e.coding.net/biteme/L_dotfiles/neovim-nvchad ~/.config/nvim --depth 1 && nvim
 ```
 
 ### Windows
 
-```
+```shell
 git clone https://e.coding.net/biteme/L_dotfiles/neovim-nvchad $HOME\AppData\Local\nvim --depth 1 && nvim
 ```
 
