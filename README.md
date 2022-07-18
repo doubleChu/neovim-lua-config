@@ -1,4 +1,4 @@
-原地址 [nvchad.github.io](https://nvchad.github.io/quickstart/install#pre-requisites)
+原地址/Original Site: [nvchad.github.io](https://nvchad.github.io/quickstart/install#pre-requisites)
 
 在Docker容器中尝试
 -----------------------------------------------------------------------------
@@ -17,7 +17,7 @@ docker run -w /root -it --rm alpine:edge sh -uelic '
 -----------------------------------------------------------
 
 *   [Neovim 0.7.0](https://github.com/neovim/neovim/releases/tag/v0.7.0)
-*   如果neovim对你的操作系统来说很老，那么考虑试试这个[Neovim版本管理器](https://github.com/MordechaiHadad/bob)
+*   如果neovim对你的操作系统来说很旧，那么考虑试试这个[Neovim版本管理器](https://github.com/MordechaiHadad/bob)
 *   在使用的终端中[使用一种Nerd Font](https://www.nerdfonts.com/).
 
 ### 半可选
@@ -30,13 +30,13 @@ docker run -w /root -it --rm alpine:edge sh -uelic '
 ### Linux/MacOS
 
 ```shell
-git clone https://e.coding.net/biteme/L_dotfiles/neovim-nvchad ~/.config/nvim --depth 1 && nvim
+git clone https://github.com/doubleChu/neovim-lua ~/.config/nvim --depth 1 && nvim
 ```
 
 ### Windows
 
 ```shell
-git clone https://e.coding.net/biteme/L_dotfiles/neovim-nvchad $HOME\AppData\Local\nvim --depth 1 && nvim
+git clone https://github.com/doubleChu/neovim-lua $HOME\AppData\Local\nvim --depth 1 && nvim
 ```
 
 (注意: Windows 必须安装 [`mingw`](http://mingw-w64.org/doku.php) 或者将其设置在Path中)
