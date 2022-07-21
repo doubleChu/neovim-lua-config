@@ -8,7 +8,7 @@ M.other = {
 
 M.lspconfig = {
    v = {
-      ["<leader>fr"] = {
+      ["<leader>r"] = {
          function()
             local old_func = vim.go.operatorfunc
             _G.op_func_formatting = function()
