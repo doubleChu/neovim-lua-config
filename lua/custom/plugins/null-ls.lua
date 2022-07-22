@@ -7,7 +7,7 @@ end
 local b = null_ls.builtins
 
 local sources = {
-
+   b.code_actions.gitsigns,
    b.diagnostics.cspell,
 
    -- webdev stuff
