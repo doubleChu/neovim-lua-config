@@ -8,14 +8,17 @@ local b = null_ls.builtins
 
 local sources = {
 
+   b.diagnostics.cspell,
+
    -- webdev stuff
    b.formatting.deno_fmt,
    b.formatting.prettier,
+   b.code_actions.eslint,
+   b.code_actions.xo,
 
    -- Lua
    b.formatting.stylua,
    b.diagnostics.luacheck.with { extra_args = { "--global vim" } },
-
 
    -- Shell
    b.formatting.shfmt,
@@ -27,9 +30,9 @@ null_ls.setup {
    sources = sources,
 
    -- format on save
--- on_attach = function(client)
---    if client.resolved_capabilities.document_formatting then
---       vim.cmd "autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()"
---    end
--- end,
+   -- on_attach = function(client)
+   --    if client.resolved_capabilities.document_formatting then
+   --       vim.cmd "autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()"
+   --    end
+   -- end,
 }
