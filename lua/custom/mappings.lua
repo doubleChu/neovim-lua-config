@@ -2,13 +2,13 @@ local M = {}
 
 M.other = {
    n = {
-      ["cll"] = { "yiwoconsole.log()<Esc>0f(a<Esc>p", "正常模式中的console.log，在下一行上插入括号内的单词"}
+      ["cll"] = { "yiwoconsole.log({})<Esc>0f{a<Esc>p", "正常模式中的console.log，在下一行上插入括号内的单词"}
    },
    i = {
-      ["cll"] = { "console.log()<Esc>0f(a", "插入模式中的console.log，焦点放在括号内"}
+      ["cll"] = { "console.log({})<Esc>0f{a", "插入模式中的console.log，焦点放在括号内"}
    },
    v = {
-      ["cll"] = { "yoconsole.log()<Esc>0f(a<Esc>p", "可视模式中的console.log，在下一行输出选中的内容" },
+      ["cll"] = { "yoconsole.log({})<Esc>0f{a<Esc>p", "可视模式中的console.log，在下一行输出选中的内容" },
       ["Y"] = { [["+y]], "一键复制到系统剪切板" },
    },
 }
