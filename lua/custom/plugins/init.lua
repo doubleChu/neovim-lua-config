@@ -36,4 +36,11 @@ return {
          }
       end,
    },
-}
+   ["gaelph/logsitter.nvim"] = {
+      after = { "nvim-treesitter"}
+   },
+   ["karb94/neoscroll.nvim"] = {
+      config = function ()
+         require('neoscroll').setup()
+      end
+   }
