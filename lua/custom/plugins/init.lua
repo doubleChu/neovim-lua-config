@@ -25,4 +25,15 @@ return {
          require "custom.plugins.null-ls"
       end,
    },
+   ["glepnir/lspsaga.nvim"] = {
+      config = function()
+         local saga = require "lspsaga"
+         saga.init_lsp_saga {
+            -- need neovim 0.8+, not for now
+            -- symbol_in_winbar = {
+            --    in_custom = true,
+            -- },
+         }
+      end,
+   },
 }

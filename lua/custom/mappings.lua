@@ -7,6 +7,34 @@ M.other = {
 }
 
 M.lspconfig = {
+   -- lspsaga keymap
+   n = {
+      ["<leader>ca"] = {
+         "<cmd> Lspsaga code_action <CR>",
+         "   lsp code_action",
+      },
+      ["[d"] = {
+        "<cmd> Lspsaga diagnostic_jump_prev <CR>",
+         "   goto prev",
+      },
+
+      ["]d"] = {
+         "<cmd> Lspsaga diagnostic_jump_next <CR>",
+         "   goto_next",
+      },
+      ["<leader>ra"] = {
+         "<cmd> Lspsaga rename <CR>",
+         "   lsp rename",
+      },
+      ["<leader>d"] = {
+         "<cmd> Lspsaga preview_definition <CR>",
+         "   lsp preview definition",
+      },
+      ["<leader>lo"] = {
+         "<cmd> LSoutlineToggle <CR>",
+         "   lsp outline",
+      },
+   },
    v = {
       ["<leader>r"] = {
          function()
