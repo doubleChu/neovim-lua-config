@@ -1,23 +1,23 @@
--- Just an example, supposed to be placed in /lua/custom/
-
 local M = {}
 
--- make sure you maintain the structure of `core/default_config.lua` here,
--- example of changing theme:
+local pluginConfs = require "custom.plugins.configs"
 
 M.ui = {
-   theme = "everforest",
+  theme = "everforest",
 }
 
 M.mappings = require "custom.mappings"
 
 M.plugins = {
-   user = require "custom.plugins",
-   options = {
-      lspconfig = {
-         setup_lspconf = "custom.plugins.lspconfig",
-      },
-   },
+  user = require "custom.plugins",
+  override = {
+    ["hrsh7th/nvim-cmp"] = pluginConfs.cmp,
+  },
+  options = {
+    lspconfig = {
+      setup_lspconf = "custom.plugins.lspconfig",
+    },
+  },
 }
 
 return M
