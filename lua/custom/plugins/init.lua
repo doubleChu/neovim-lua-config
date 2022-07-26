@@ -5,29 +5,6 @@ return {
       require "custom.plugins.lspconfig"
     end,
   },
-  ["williamboman/mason.nvim"] = {
-    ensure_installed = {
-      "cspell",
-      -- lua stuff
-      "lua-language-server",
-      "stylua",
-      "luacheck",
-
-      -- web dev
-      "css-lsp",
-      "html-lsp",
-      "typescript-language-server",
-      "eslint-lsp",
-      "deno",
-      "prettier",
-      "emmet-ls",
-      "json-lsp",
-
-      -- shell
-      "shfmt",
-      "shellcheck",
-    },
-  },
   -- 编辑只读文件
   ["lambdalisue/suda.vim"] = {
     cmd = "SudaWrite",
@@ -71,11 +48,6 @@ return {
   ["karb94/neoscroll.nvim"] = {
     config = function()
       require("neoscroll").setup()
-    end,
-  },
-  ["lewis6991/gitsigns.nvim"] = {
-    config = function()
-      require("gitsigns").setup()
     end,
   },
 }

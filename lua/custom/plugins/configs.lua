@@ -26,4 +26,27 @@ M.cmp = function()
   }
 end
 
+M.mason = {
+  ensure_installed = {
+    "cspell",
+    -- lua stuff
+    "lua-language-server",
+    "stylua",
+    "luacheck",
+
+    -- web dev
+    "css-lsp",
+    "html-lsp",
+    "typescript-language-server",
+    "eslint-lsp",
+    "deno",
+    "prettier",
+    "emmet-ls",
+    "json-lsp",
+
+    -- shell
+    "shfmt",
+    "shellcheck",
+  },
+}
 return M

@@ -12,6 +12,7 @@ M.plugins = {
   user = require "custom.plugins",
   override = {
     ["hrsh7th/nvim-cmp"] = pluginConfs.cmp,
+    ["williamboman/mason.nvim"] = pluginConfs.mason,
   },
 }
 
