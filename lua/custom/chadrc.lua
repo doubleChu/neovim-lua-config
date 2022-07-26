@@ -13,11 +13,6 @@ M.plugins = {
   override = {
     ["hrsh7th/nvim-cmp"] = pluginConfs.cmp,
   },
-  options = {
-    lspconfig = {
-      setup_lspconf = "custom.plugins.lspconfig",
-    },
-  },
 }
 
 return M
