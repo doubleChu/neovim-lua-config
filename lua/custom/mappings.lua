@@ -1,6 +1,6 @@
 local M = {}
 
-M.other = {
+M.snippets = {
   n = {
     ["cll"] = {
       "yiwoconsole.log({})<Esc>0f{a<Esc>p",
@@ -15,8 +15,35 @@ M.other = {
       "yoconsole.log({})<Esc>0f{a<Esc>p",
       "可视模式中的console.log，在下一行输出选中的内容",
     },
-    ["Y"] = { [["+y]], "一键复制到系统剪切板" },
   },
+}
+
+M.operation = {
+  n = {
+    ["<C-q>"] = { "<C-v>", "Do visual-block section" },
+    ["<C-x>"] = { "dd", "Cut a line" },
+    ["<C-c>"] = { "yy", "Copy a line" },
+    ["<C-v>"] = { '"+gP', "Paste" },
+    ["<C-a>"] = { "gggH<C-o>G", "Select All" },
+  },
+  i = {
+    ["<C-x>"] = { "<C-o>dd", "Cut a line" },
+    ["<C-c>"] = { "<C-o>yy", "Copy a line" },
+    ["<C-v>"] = { '"+gP', "Paste" },
+    ["<C-a>"] = { "<C-o>gg<C-o>gH<C-o>G", "Select All" },
+    ["<C-s>"] = { "<Esc>:update<CR>gi", "﬚  save file" },
+    ["<C-z>"] = { "<C-o>u", "Undo"}, -- not in command line
+  },
+  v = {
+    ["<C-x>"] = { '"+x', "Cut Section" },
+    ["<C-c>"] = { '"+y', "Copy Section" },
+    ["<C-v>"] = { '"+gP', "Paste" },
+    ["<C-s>"] = { "<C-c>:update<CR>", "﬚  save file" },
+    ["<BS>"] = { "d", "Delete section" },
+  },
+  c = {
+    ["<C-v>"] = { "<C-r>+", "Paste" },
+  }
 }
 
 M.lspconfig = {
