@@ -1,6 +1,4 @@
--- example file i.e lua/custom/init.lua
-
--- load your globals, autocmds here or anything .__.
+-- GUI setting
 vim.opt.guifont = (function()
   local gui_font = "font_family:font_size"
   if vim.fn.has "win32" == 1 then
@@ -11,5 +9,6 @@ vim.opt.guifont = (function()
   return gui_font
 end)()
 
+-- Neovide setting
 vim.g.neovide_transparency = 0.85
 vim.g.neovide_profiler = false

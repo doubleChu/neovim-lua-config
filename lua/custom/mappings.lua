@@ -23,8 +23,7 @@ M.msvim = {
     ["<C-q>"] = { "<C-v>", "Do visual-block section" },
     ["<C-x>"] = { "dd", "Cut a line" },
     ["<C-c>"] = { "yy", "Copy a line" },
-    -- Allow paste with text was just yanked instead of what was replaced
-    ["<C-v>"] = { '"+gPgvy', "Paste" },
+    ["<C-v>"] = { '"+gP', "Paste" },
     ["<C-a>"] = { "gggH<C-o>G", "Select All" },
     ["<leader>aa"] = { "<C-a>", "Add number under cursor" },
     ["<leader>ax"] = { "<C-x>", "Aubtract number under cursor" },
@@ -32,7 +31,7 @@ M.msvim = {
   i = {
     ["<C-x>"] = { "<C-o>dd", "Cut a line" },
     ["<C-c>"] = { "<C-o>yy", "Copy a line" },
-    ["<C-v>"] = { '<C-o>"+gPgvy', "Paste" },
+    ["<C-v>"] = { '<C-o>"+gP', "Paste" },
     ["<C-a>"] = { "<C-o>gg<C-o>gH<C-o>G", "Select All" },
     ["<C-s>"] = { "<Esc>:update<CR>gi", "﬚  save file" },
     ["<C-z>"] = { "<C-o>u", "Undo" }, -- not in command line
@@ -40,6 +39,7 @@ M.msvim = {
   v = {
     ["<C-x>"] = { '"+x', "Cut Section" },
     ["<C-c>"] = { '"+y', "Copy Section" },
+    -- Allow paste with text was just yanked instead of what was replaced
     ["<C-v>"] = { '"+gPgvy', "Paste" },
     ["<C-s>"] = { "<Esc>:update<CR>gv", "﬚  save file" },
     ["<BS>"] = { "d", "Delete section" },
