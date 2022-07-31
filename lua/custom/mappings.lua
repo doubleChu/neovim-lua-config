@@ -18,7 +18,7 @@ M.snippets = {
   },
 }
 
-M.msvim = {
+M.mswin = {
   n = {
     ["<C-q>"] = { "<C-v>", "Do visual-block section" },
     ["<C-x>"] = { "dd", "Cut a line" },
