@@ -10,7 +10,7 @@ local servers = {
   "eslint",
   "tsserver",
   "emmet_ls",
-  "denols",
+  -- "denols",
   "jsonls",
 }
 

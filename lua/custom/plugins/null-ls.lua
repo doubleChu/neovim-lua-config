@@ -11,12 +11,12 @@ local sources = {
   -- b.diagnostics.cspell,
 
   -- webdev stuff
-  b.formatting.deno_fmt,
+  -- b.formatting.deno_fmt,
   b.formatting.prettier,
-  -- b.code_actions.eslint,
+  b.code_actions.eslint,
   -- b.diagnostics.eslint,
-  b.code_actions.xo,
-  b.diagnostics.xo,
+  -- b.code_actions.xo,
+  -- b.diagnostics.xo,
   -- b.diagnostics.tsc,
 
   -- Lua
