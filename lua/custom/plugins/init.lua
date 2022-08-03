@@ -50,4 +50,26 @@ return {
       require("neoscroll").setup()
     end,
   },
+  ["smjonas/snippet-converter.nvim"] = {
+    config = function()
+      require("luasnip.loaders.from_vscode").load(opts)
+      local template = {
+        name = "Remove license snippets",
+        sources = {
+          vscode_luasnip = {"./friendly-snippets/snippets"}
+        },
+        output = {
+          vscode_luasnip = { vim.fn.stdpath("config") .. "/vscode_snippets" }
+        },
+        transform_snippets = function(snippet, helper)
+         if snippet.path:find("friendly-snippets/snippets/global.json") and snippet.trigger.match("License") then
+           return false
+         end
+        end
+      }
+      require("snippet_converter").setup {
+        templates = {template}
+      }
+    end,
+  }
 }
