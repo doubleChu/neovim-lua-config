@@ -10,6 +10,7 @@ M.lazy_load = function(tb)
     callback = function()
       if tb.condition() then
         vim.api.nvim_del_augroup_by_name(tb.augroup_name)
+        pcall(require, "impatient")
 
         -- dont defer for treesitter as it will show slow highlighting
         -- This deferring only happens only when we do "nvim filename"
@@ -43,6 +44,20 @@ M.on_file_open = function(plugin_name)
     end,
   }
 end
+
+M.packer_cmds = {
+  "PackerSnapshot",
+  "PackerSnapshotRollback",
+  "PackerSnapshotDelete",
+  "PackerInstall",
+  "PackerUpdate",
+  "PackerSync",
+  "PackerClean",
+  "PackerCompile",
+  "PackerStatus",
+  "PackerProfile",
+  "PackerLoad",
+}
 
 M.treesitter_cmds = {
   "TSInstall",

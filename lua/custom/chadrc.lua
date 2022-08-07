@@ -4,6 +4,7 @@ local pluginConfs = require "custom.plugins.configs"
 
 M.ui = {
   theme = "everforest",
+  theme_toggle = {"everforest", "gruvchad"}
 }
 
 M.mappings = require "custom.mappings"

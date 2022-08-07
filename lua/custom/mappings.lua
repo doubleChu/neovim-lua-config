@@ -74,7 +74,7 @@ M.operation = {
   },
 }
 
-M.lspconfig = {
+M.lsp_config = {
   -- lspsaga keymap
   n = {
     ["<leader>ca"] = {
@@ -118,6 +118,36 @@ M.lspconfig = {
         vim.api.nvim_feedkeys("g@", "n", false)
       end,
       "   lsp range formatting",
+    },
+  },
+}
+
+M.dap_config = {
+  n = {
+    -- Debug keymapping
+    ["<F1>"] = { "<cmd> DapToggleBreakpoint <CR>", "Toggle Breakpoint" },
+    ["<F2>"] = { "<cmd> DapContinue <CR>", "Debug Continue" },
+    ["<F3>"] = { "<cmd> DapStepOver <CR>", "Debug StepOver" },
+    ["<F4>"] = { "<cmd> DapStepInto <CR>", "Debug StepInto" },
+    ["<F5>"] = { "<cmd> DapStepOut <CR>", "Debug StepOut" },
+    ["<F6>"] = {
+      function()
+        require("dapui").eval()
+      end,
+      "Debug Evaluate Expression",
+    },
+    ["<F7>"] = {
+      function()
+        require("dapui").float_element()
+      end,
+      "Debug Disconnect",
+    },
+    ["<F8>"] = { "<cmd> DapTerminate <CR>", "Debug Terminate" },
+    ["<F9>"] = {
+      function()
+        require("dap").clear_breakpoints()
+      end,
+      "Removes all breakpoints",
     },
   },
 }

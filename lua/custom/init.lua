@@ -15,6 +15,6 @@ if vim.fn.exists "g:neovide" then
   vim.g.neovide_profiler = false
 end
 
---Goneovim setting
+-- Goneovim setting
 if vim.fn.exists "g:gonvim_running" then
 end
