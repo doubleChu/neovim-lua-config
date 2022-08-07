@@ -95,7 +95,7 @@ return {
     cmd = "DapToggleBreakpoint",
     config = function()
       local pluginConfs = require "custom.plugins.configs"
-      require('dap')
+      require "dap"
       vim.fn.sign_define("DapBreakpoint", pluginConfs.dap_config.dap_sign_define.breakpoint)
       vim.fn.sign_define("DapBreakpointRejected", pluginConfs.dap_config.dap_sign_define.breakpoint_rejected)
       vim.fn.sign_define("DapStopped", pluginConfs.dap_config.dap_sign_define.stopped)

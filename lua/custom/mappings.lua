@@ -150,6 +150,14 @@ M.dap_config = {
       "Removes all breakpoints",
     },
   },
+  v = {
+    ["<F6>"] = {
+      function()
+        require("dapui").eval()
+      end,
+      "Debug Evaluate Expression",
+    },
+  },
 }
 
 return M
