@@ -10,12 +10,11 @@ vim.opt.guifont = (function()
 end)()
 
 -- Neovide setting
-if vim.fn.exists("g:neovide") then
+if vim.fn.exists "g:neovide" then
   vim.g.neovide_transparency = 0.85
   vim.g.neovide_profiler = false
 end
 
 --Goneovim setting
-if vim.fn.exists("g:gonvim_running") then
-
+if vim.fn.exists "g:gonvim_running" then
 end

@@ -17,6 +17,7 @@ return {
     after = { "nvim-cmp" },
   },
   ["iamcco/markdown-preview.nvim"] = {
+    ft = "markdown",
     run = function()
       vim.fn["mkdp#util#install"]()
     end,
@@ -32,6 +33,7 @@ return {
     end,
   },
   ["glepnir/lspsaga.nvim"] = {
+    after = "nvim-lspconfig",
     config = function()
       local saga = require "lspsaga"
       saga.init_lsp_saga {
@@ -43,41 +45,50 @@ return {
     end,
   },
   ["gaelph/logsitter.nvim"] = {
+    ft = { "javascript", "typescript", "go", "lua" },
     after = { "nvim-treesitter" },
   },
   ["karb94/neoscroll.nvim"] = {
+    events = { "BufRead", "BufWinEnter", "BufNewFile" },
     config = function()
       require("neoscroll").setup()
     end,
   },
   ["ahmedkhalf/project.nvim"] = {
+    events = { "BufRead", "BufWinEnter", "BufNewFile" },
     config = function()
       require("project_nvim").setup()
-    end
+    end,
   },
   ["smjonas/snippet-converter.nvim"] = {
+    cmd = "ConvertSnippets",
     config = function()
       -- require("luasnip.loaders.from_vscode").load(opts)
       local template = {
         name = "Remove-License-Snippets",
         sources = {
-          vscode_luasnip = {"./friendly-snippets"}
+          vscode_luasnip = { "./friendly-snippets" },
         },
         output = {
-          vscode_luasnip = { vim.fn.stdpath("data") .. "/site/pack/packer/opt/friendly-snippets/snippets", }
+          vscode_luasnip = {
+            vim.fn.stdpath "data" .. "/site/pack/packer/opt/friendly-snippets/snippets",
+            opts = {
+              generate_package_json = false,
+            },
+          },
         },
         transform_snippets = function(snippet, _)
-         if
-           snippet.path:match("global%.json$") and snippet.trigger:match("[Ll]icense")
-           or (snippet.description and snippet.description:match("[Ll]icense"))
-         then
-           return false
-         end
-        end
+          if
+            snippet.path:match "global%.json$" and snippet.trigger:match "[Ll]icense"
+            or (snippet.description and snippet.description:match "[Ll]icense")
+          then
+            return false
+          end
+        end,
       }
       require("snippet_converter").setup {
-        templates = {template}
+        templates = { template },
       }
     end,
-  }
+  },
 }
