@@ -140,7 +140,7 @@ M.dap_config = {
       function()
         require("dapui").float_element()
       end,
-      "Debug Disconnect",
+      "Debug Float Element",
     },
     ["<F8>"] = { "<cmd> DapTerminate <CR>", "Debug Terminate" },
     ["<F9>"] = {

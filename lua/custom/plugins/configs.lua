@@ -53,13 +53,13 @@ M.mason = {
 M.dap_config = {
   dap_sign_define = {
     breakpoint = {
-      text = "",
+      text = "🔴",
       texthl = "LspDiagnosticsSignError",
       linehl = "",
       numhl = "",
     },
     breakpoint_rejected = {
-      text = "",
+      text = "",
       texthl = "LspDiagnosticsSignHint",
       linehl = "",
       numhl = "",
