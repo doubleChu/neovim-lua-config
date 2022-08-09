@@ -14,6 +14,7 @@ M.plugins = {
   override = {
     ["hrsh7th/nvim-cmp"] = pluginConfs.cmp,
     ["williamboman/mason.nvim"] = pluginConfs.mason,
+    ["nvim-treesitter/nvim-treesitter"] = pluginConfs.treesitter,
   },
 }
 

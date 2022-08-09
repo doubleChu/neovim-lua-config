@@ -81,6 +81,12 @@ M.dap_config = {
         cwd = "${workspaceFolder}",
         console = "integratedTerminal",
       },
+      -- {
+      --   type = "pwa-node",
+      --   request = "attach",
+      --   name = "Attach",
+      --   processId = require("dap.utils").pick_process,
+      -- },
     },
     typescript = {
       {
@@ -94,7 +100,35 @@ M.dap_config = {
         runtimeArgs = { "run", "--inspect-brk", "-A", "${file}" },
         attachSimplePort = 9229,
       },
+      -- {
+      --   type = "pwa-node",
+      --   request = "attach",
+      --   name = "Attach",
+      --   processId = require("dap.utils").pick_process,
+      --   runtimeExecutable = "deno",
+      --   runtimeArgs = { "run", "--inspect-brk", "-A", "${file}" },
+      --   attachSimplePort = 9229,
+      -- },
     },
   },
+}
+M.treesitter = {
+  rainbow = {
+    enable = true,
+    -- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
+    extended_mode = false, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
+    max_file_lines = 1000, -- Do not enable for files with more than n lines, int
+    -- colors for theme everforest
+    colors = {
+      "#e67e80",
+      "#e69875",
+      "#dbbc7f",
+      "#a7c080",
+      "#83c092",
+      "#7fbbb3",
+      "#d699b6",
+    }, -- table of hex strings
+    -- termcolors = {} -- table of colour name strings
+  }
 }
 return M

@@ -141,4 +141,5 @@ return {
       dap.configurations.typescript = pluginConfs.dap_config.dap_language_configurations.typescript
     end,
   },
+  ["p00f/nvim-ts-rainbow"] = {},
 }
