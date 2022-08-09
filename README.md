@@ -30,13 +30,13 @@ docker run -w /root -it --rm alpine:edge sh -uelic '
 ### Linux/MacOS
 
 ```shell
-git clone https://github.com/doubleChu/neovim-lua ~/.config/nvim --depth 1 && nvim
+git clone https://github.com/doubleChu/neovim-lua-config ~/.config/nvim --depth 1 && nvim
 ```
 
 ### Windows
 
 ```shell
-git clone https://github.com/doubleChu/neovim-lua $HOME\AppData\Local\nvim --depth 1 && nvim
+git clone https://github.com/doubleChu/neovim-lua-config $HOME\AppData\Local\nvim --depth 1 && nvim
 ```
 
 (注意: Windows 必须安装 [`mingw`](http://mingw-w64.org/doku.php) 或者将其设置在Path中)
