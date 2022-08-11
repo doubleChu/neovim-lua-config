@@ -48,10 +48,15 @@ return {
     ft = { "javascript", "typescript", "go", "lua" },
     after = { "nvim-treesitter" },
   },
-  ["karb94/neoscroll.nvim"] = {
+  -- smooth scrolling, or use "karb94/neoscroll.nvim"
+  ["declancm/cinnamon.nvim"] = {
     events = { "BufRead", "BufWinEnter", "BufNewFile" },
     config = function()
-      require("neoscroll").setup()
+      require("cinnamon").setup {
+        default_keymaps = true, -- Create default keymaps.
+        extra_keymaps = true, -- Create extra keymaps.
+        scroll_limit = 75,
+      }
     end,
   },
   ["ahmedkhalf/project.nvim"] = {
@@ -142,4 +147,10 @@ return {
     end,
   },
   ["p00f/nvim-ts-rainbow"] = {},
+  ["windwp/nvim-ts-autotag"] = {
+    config = function()
+      require("nvim-ts-autotag").setup()
+    end,
+  },
+  ["JoosepAlviste/nvim-ts-context-commentstring"] = {},
 }
