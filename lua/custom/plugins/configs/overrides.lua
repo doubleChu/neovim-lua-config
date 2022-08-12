@@ -93,4 +93,8 @@ M.comment = {
   end,
 }
 
+M.telescope = {
+  extensions_list = { "themes", "terms", "projects" },
+}
+
 return M

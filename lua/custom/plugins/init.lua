@@ -95,6 +95,7 @@ return {
 
   -- Add/change/delete surrounding delimiter pairs with ease
   ["kylechui/nvim-surround"] = {
+    opt = true,
     setup = function()
       require("core.lazy_load").on_file_open "nvim-surround"
     end,

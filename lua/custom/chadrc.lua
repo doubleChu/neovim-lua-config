@@ -16,6 +16,7 @@ M.plugins = {
     ["nvim-treesitter/nvim-treesitter"] = overrides.treesitter,
     ["williamboman/mason.nvim"] = overrides.mason,
     ["numToStr/Comment.nvim"] = overrides.comment,
+    ["nvim-telescope/telescope.nvim"] = overrides.telescope,
   },
 }
 
