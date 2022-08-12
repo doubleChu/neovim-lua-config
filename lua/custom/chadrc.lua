@@ -1,6 +1,6 @@
 local M = {}
 
-local pluginConfs = require "custom.plugins.configs"
+local overrides = require "custom.plugins.configs.overrides"
 
 M.ui = {
   theme = "everforest",
@@ -12,10 +12,10 @@ M.mappings = require "custom.mappings"
 M.plugins = {
   user = require "custom.plugins",
   override = {
-    ["hrsh7th/nvim-cmp"] = pluginConfs.cmp,
-    ["williamboman/mason.nvim"] = pluginConfs.mason,
-    ["nvim-treesitter/nvim-treesitter"] = pluginConfs.treesitter,
-    ["numToStr/Comment.nvim"] = pluginConfs.comment,
+    ["hrsh7th/nvim-cmp"] = overrides.cmp,
+    ["nvim-treesitter/nvim-treesitter"] = overrides.treesitter,
+    ["williamboman/mason.nvim"] = overrides.mason,
+    ["numToStr/Comment.nvim"] = overrides.comment,
   },
 }
 
