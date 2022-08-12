@@ -50,17 +50,23 @@ return {
   },
   -- smooth scrolling, or use "karb94/neoscroll.nvim"
   ["declancm/cinnamon.nvim"] = {
-    events = { "BufRead", "BufWinEnter", "BufNewFile" },
+    opt = true,
+    setup = function()
+      require("core.lazy_load").on_file_open "cinnamon.nvim"
+    end,
     config = function()
       require("cinnamon").setup {
         default_keymaps = true, -- Create default keymaps.
         extra_keymaps = true, -- Create extra keymaps.
-        scroll_limit = 75,
+        scroll_limit = 75, -- Max number of lines moved before scrolling is skipped.
       }
     end,
   },
   ["ahmedkhalf/project.nvim"] = {
-    events = { "BufRead", "BufWinEnter", "BufNewFile" },
+    opt = true,
+    setup = function()
+      require("core.lazy_load").on_file_open "project.nvim"
+    end,
     config = function()
       require("project_nvim").setup()
     end,
@@ -146,11 +152,27 @@ return {
       dap.configurations.typescript = pluginConfs.dap_config.dap_language_configurations.typescript
     end,
   },
-  ["p00f/nvim-ts-rainbow"] = {},
+  ["p00f/nvim-ts-rainbow"] = {
+    after = "nvim-treesitter",
+  },
   ["windwp/nvim-ts-autotag"] = {
+    after = "nvim-treesitter",
     config = function()
       require("nvim-ts-autotag").setup()
     end,
   },
-  ["JoosepAlviste/nvim-ts-context-commentstring"] = {},
+  ["JoosepAlviste/nvim-ts-context-commentstring"] = {
+    after = "nvim-treesitter",
+  },
+  ["folke/trouble.nvim"] = {
+    cmd = "TroubleToggle",
+    config = function()
+      require("trouble").setup()
+    end,
+  },
+  ["kylechui/nvim-surround"] = {
+    config = function()
+      require("nvim-surround").setup {}
+    end,
+  },
 }

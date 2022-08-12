@@ -160,4 +160,15 @@ M.dap_config = {
   },
 }
 
+M.trouble = {
+  n = {
+    ["<leader>tr"] = {"<cmd> TroubleToggle <CR>", "Trouble panel toggle"},
+    ["<leader>tw"] = {"<cmd> TroubleToggle workspace_diagnostics <CR>", "workspace diagnostics from the builtin LSP client"},
+    ["<leader>td"] = {"<cmd> TroubleToggle document_diagnostics <CR>", "document diagnostics from the builtin LSP client"},
+    ["<leader>tq"] = {"<cmd> TroubleToggle quickfix <CR>", "quickfix items"},
+    ["<leader>tl"] = {"<cmd> TroubleToggle loclist <CR>", "items from the window's location list"},
+    ["gr"] = {"<cmd> TroubleToggle lsp_references <CR>", "(Replace previous) references of the word under the cursor from the builtin LSP client"}
+  }
+}
+
 return M
