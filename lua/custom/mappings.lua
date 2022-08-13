@@ -76,6 +76,8 @@ M.operation = {
 
 M.lsp_config = {
   -- lspsaga keymap
+  plugin = true,
+
   n = {
     ["<leader>ca"] = {
       "<cmd> Lspsaga code_action <CR>",
@@ -123,6 +125,8 @@ M.lsp_config = {
 }
 
 M.dap_config = {
+  plugin = true,
+
   n = {
     -- Debug keymapping
     ["<F1>"] = { "<cmd> DapToggleBreakpoint <CR>", "Toggle Breakpoint" },
@@ -161,6 +165,8 @@ M.dap_config = {
 }
 
 M.trouble = {
+  plugin = true,
+
   n = {
     ["<leader>tr"] = { "<cmd> TroubleToggle <CR>", "Trouble panel toggle" },
     ["<leader>tw"] = {

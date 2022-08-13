@@ -20,6 +20,9 @@ return {
     config = function()
       require("trouble").setup()
     end,
+    setup = function()
+      require("core.utils").load_mappings "trouble"
+    end,
   },
 
   ["neovim/nvim-lspconfig"] = {
@@ -40,6 +43,9 @@ return {
     after = "nvim-lspconfig",
     config = function()
       require("custom.plugins.configs.others").lspsaga()
+    end,
+    setup = function()
+      require("core.utils").load_mappings "lsp_config"
     end,
   },
 
@@ -64,6 +70,9 @@ return {
     cmd = "DapToggleBreakpoint",
     config = function()
       require "custom.plugins.configs.nvim-dap"
+    end,
+    setup = function()
+      require("core.utils").load_mappings "dap_config"
     end,
   },
   -- A UI for nvim-dap
