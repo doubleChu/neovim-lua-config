@@ -24,6 +24,23 @@ return {
       require("core.utils").load_mappings "trouble"
     end,
   },
+  -- ✅ Highlight, list and search todo comments in your projects
+  ["folke/todo-comments.nvim"] = {
+    opt = true,
+    setup = function()
+      require("core.lazy_load").on_file_open "todo-comments.nvim"
+    end,
+    config = function()
+      require("todo-comments").setup {}
+    end,
+  },
+  -- Better quickfix window in Neovim, polish old quickfix window.
+  ["kevinhwang91/nvim-bqf"] = {
+    ft = "qf",
+    config = function()
+      require("custom.plugins.configs.others").bqf()
+    end,
+  },
 
   ["neovim/nvim-lspconfig"] = {
     config = function()
@@ -118,6 +135,13 @@ return {
     after = { "nvim-cmp" },
     config = function()
       require("tabout").setup {}
+    end,
+  },
+  -- 🌌 Next-generation motion plugin
+  ["ggandor/lightspeed.nvim"] = {
+    opt = true,
+    setup = function()
+      require("core.lazy_load").on_file_open "lightspeed.nvim"
     end,
   },
   -- add log messages

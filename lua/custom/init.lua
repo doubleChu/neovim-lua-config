@@ -10,11 +10,16 @@ vim.opt.guifont = (function()
 end)()
 
 -- Neovide setting
-if vim.fn.exists "g:neovide" then
+if vim.g.neovide then
   vim.g.neovide_transparency = 0.85
   vim.g.neovide_profiler = false
 end
 
--- Goneovim setting
-if vim.fn.exists "g:gonvim_running" then
+-- NVUI setting
+if vim.g.nvui then
+  vim.cmd [[NvuiOpacity 0.9]]
+  vim.cmd [[NvuiFrameless 1]]
+  vim.cmd [[NvuiTitlebarFontFamily Cascadia Code]]
+  vim.cmd [[NvuiTitlebarFontSize 12]]
+  vim.opt.guifont = "CaskaydiaCove NF:h14,Microsoft YaHei:h14"
 end

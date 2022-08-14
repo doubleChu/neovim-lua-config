@@ -53,24 +53,24 @@ M.mswin = {
 M.operation = {
   n = {
     -- Resize with arrows
-    ["<C-Up>"] = { ":resize -2<CR>", "Resize up" },
-    ["<C-Down>"] = { ":resize +2<CR>", "Resize down" },
-    ["<C-Left>"] = { ":vertical resize -2<CR>", "Resize left" },
-    ["<C-Right>"] = { ":vertical resize +2<CR>", "Resize right" },
+    ["<C-Up>"] = { "<cmd> resize -2<CR>", "Resize up" },
+    ["<C-Down>"] = { "<cmd> resize +2<CR>", "Resize down" },
+    ["<C-Left>"] = { "<cmd> vertical resize -2<CR>", "Resize left" },
+    ["<C-Right>"] = { "<cmd> vertical resize +2<CR>", "Resize right" },
     -- Move text up and down
-    ["<A-j>"] = { ":m .+1<CR>==", "Move text down" },
-    ["<A-k>"] = { ":m .-2<CR>==", "Move text up" },
+    ["<A-j>"] = { "<cmd> m .+1<CR>==", "Move text down" },
+    ["<A-k>"] = { "<cmd> m .-2<CR>==", "Move text up" },
   },
   i = {
-    ["<A-j>"] = { "<Esc>:m .+1<CR>==gi", "Move text down" },
-    ["<A-k>"] = { "<Esc>:m .-2<CR>==gi", "Move text up" },
+    ["<A-j>"] = { "<Esc><cmd> m .+1<CR>==gi", "Move text down" },
+    ["<A-k>"] = { "<Esc><cmd> m .-2<CR>==gi", "Move text up" },
   },
   v = {
     ["<"] = { "<gv", "Better indenting left" },
     [">"] = { ">gv", "Better indenting right" },
     -- Move current line / block with Alt-j/k ala vscode.
-    ["<A-j>"] = { ":m '>+1<CR>gv=gv", "Move text down" },
-    ["<A-k>"] = { ":m '<-2<CR>gv=gv", "Move text up" },
+    ["<A-j>"] = { "<cmd> m '>+1<CR>gv=gv", "Move text down" },
+    ["<A-k>"] = { "<cmd> m '<-2<CR>gv=gv", "Move text up" },
   },
 }
 

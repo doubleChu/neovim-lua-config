@@ -43,6 +43,7 @@ M.cinnamon = function()
   if not present then
     return
   end
+
   local options = {
     default_keymaps = true, -- Create default keymaps.
     extra_keymaps = true, -- Create extra keymaps.
@@ -85,4 +86,19 @@ M.snippet_converter = function()
   }
   snippet_converter.setup(options)
 end
+
+M.bqf = function()
+  local present, bqf = pcall(require, "bqf")
+
+  if not present then
+    return
+  end
+
+  local options = {
+    auto_resize_height = true,
+  }
+
+  bqf.setup(options)
+end
+
 return M
