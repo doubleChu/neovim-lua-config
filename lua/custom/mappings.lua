@@ -129,25 +129,32 @@ M.dap_config = {
 
   n = {
     -- Debug keymapping
-    ["<F1>"] = { "<cmd> DapToggleBreakpoint <CR>", "Toggle Breakpoint" },
-    ["<F2>"] = { "<cmd> DapContinue <CR>", "Debug Continue" },
-    ["<F3>"] = { "<cmd> DapStepOver <CR>", "Debug StepOver" },
-    ["<F4>"] = { "<cmd> DapStepInto <CR>", "Debug StepInto" },
-    ["<F5>"] = { "<cmd> DapStepOut <CR>", "Debug StepOut" },
-    ["<F6>"] = {
+    ["<leader>tb"] = { "<cmd> DapToggleBreakpoint <CR>", "Toggle Breakpoint" },
+    ["<leader>tc"] = { "<cmd> DapContinue <CR>", "Debug Continue" },
+    ["<F9>"] = { "<cmd> DapStepOver <CR>", "Debug StepOver" },
+    ["<F10>"] = { "<cmd> DapStepInto <CR>", "Debug StepInto" },
+    -- Shift + F10 won't work in TUI Neovim, but can take effect in GUI neoivm
+    ["<leader><F10>"] = { "<cmd> DapStepOut <CR>", "Debug StepOut" },
+    ["<leader><F12>"] = { "<cmd> DapTerminate <CR>", "Debug Terminate" },
+    ["<F12>"] = {
+      function()
+        require("dap").run_last()
+      end,
+      "Debug Restart",
+    },
+    ["<leader>te"] = {
       function()
         require("dapui").eval()
       end,
       "Debug Evaluate Expression",
     },
-    ["<F7>"] = {
+    ["<leader>tf"] = {
       function()
         require("dapui").float_element()
       end,
       "Debug Float Element",
     },
-    ["<F8>"] = { "<cmd> DapTerminate <CR>", "Debug Terminate" },
-    ["<F9>"] = {
+    ["<leader>trb"] = {
       function()
         require("dap").clear_breakpoints()
       end,
@@ -155,7 +162,7 @@ M.dap_config = {
     },
   },
   v = {
-    ["<F6>"] = {
+    ["<leader>te"] = {
       function()
         require("dapui").eval()
       end,
@@ -184,6 +191,46 @@ M.trouble = {
       "(Replace previous) references of the word under the cursor from the builtin LSP client",
     },
   },
+}
+
+M.harpoon = {
+  plugin = true,
+
+  n = {
+    ["<leader>ba"] = {
+      function()
+        require("harpoon.mark").add_file()
+      end,
+      "Harpoon add file",
+    },
+    ["<leader>bb"] = {
+      function()
+        require("harpoon.ui").toggle_quick_menu()
+      end,
+      "Harpoon view all project marks",
+    },
+    ["<leader>bn"] = {
+      function()
+        require("harpoon.ui").nav_next()
+      end,
+      "Harpoon view next mark",
+    },
+    ["<leader>bp"] = {
+      function()
+        require("harpoon.ui").nav_prev()
+      end,
+      "Harpoon view previous mark",
+    },
+  }
+}
+
+M.telescope = {
+  plugin = true,
+
+  n = {
+       ["<leader>fp"] = { "<cmd> Telescope projects <CR>", "Telescope Project View" },
+       ["<leader>fn"] = { "<cmd> Telescope harpoon marks <CR>", "Telescope Harpoon mark View" },
+  }
 }
 
 return M

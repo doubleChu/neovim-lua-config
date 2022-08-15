@@ -1,5 +1,9 @@
 return {
 
+  ["rafamadriz/friendly-snippets"] = {
+    commit = "255903b5f5439a5fa20ae970e8ed09d94925b392",
+  },
+
   -- enable dashboard
   ["goolord/alpha-nvim"] = {
     disable = false,
@@ -24,6 +28,13 @@ return {
       require("core.utils").load_mappings "trouble"
     end,
   },
+  --  improve the default vim.ui interfaces
+  ["stevearc/dressing.nvim"] = {
+    opt = true,
+    setup = function()
+      require("core.lazy_load").on_file_open "dressing.nvim"
+    end,
+  },
   -- ✅ Highlight, list and search todo comments in your projects
   ["folke/todo-comments.nvim"] = {
     opt = true,
@@ -31,7 +42,7 @@ return {
       require("core.lazy_load").on_file_open "todo-comments.nvim"
     end,
     config = function()
-      require("todo-comments").setup {}
+      require("custom.plugins.configs.others").todo_comments()
     end,
   },
   -- Better quickfix window in Neovim, polish old quickfix window.
@@ -144,6 +155,14 @@ return {
       require("core.lazy_load").on_file_open "lightspeed.nvim"
     end,
   },
+  -- Getting you where you want with the fewest keystrokes.
+  ["ThePrimeagen/harpoon"] = {
+    opt = true,
+    setup = function()
+      require("core.lazy_load").on_file_open "harpoon"
+      require("core.utils").load_mappings "harpoon"
+    end,
+  },
   -- add log messages
   ["gaelph/logsitter.nvim"] = {
     ft = { "javascript", "typescript", "go", "lua" },
@@ -155,9 +174,17 @@ return {
     opt = true,
     setup = function()
       require("core.lazy_load").on_file_open "project.nvim"
+      require("core.utils").load_mappings "telescope"
     end,
     config = function()
       require("project_nvim").setup()
+    end,
+  },
+  -- A task runner and job management plugin for Neovim
+  ["stevearc/overseer.nvim"] = {
+    cmd = { "OverseerToggle" },
+    config = function()
+      require("custom.plugins.configs.others").overseer()
     end,
   },
   -- markdown preview

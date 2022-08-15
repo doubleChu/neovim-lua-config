@@ -17,6 +17,7 @@ M.plugins = {
     ["williamboman/mason.nvim"] = overrides.mason,
     ["numToStr/Comment.nvim"] = overrides.comment,
     ["nvim-telescope/telescope.nvim"] = overrides.telescope,
+    ["goolord/alpha-nvim"] = overrides.alpha,
   },
 }
 
