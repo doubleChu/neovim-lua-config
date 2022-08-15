@@ -221,16 +221,16 @@ M.harpoon = {
       end,
       "Harpoon view previous mark",
     },
-  }
+  },
 }
 
 M.telescope = {
   plugin = true,
 
   n = {
-       ["<leader>fp"] = { "<cmd> Telescope projects <CR>", "Telescope Project View" },
-       ["<leader>fn"] = { "<cmd> Telescope harpoon marks <CR>", "Telescope Harpoon mark View" },
-  }
+    ["<leader>fp"] = { "<cmd> Telescope projects <CR>", "Telescope Project View" },
+    ["<leader>fn"] = { "<cmd> Telescope harpoon marks <CR>", "Telescope Harpoon mark View" },
+  },
 }
 
 return M
