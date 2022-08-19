@@ -147,8 +147,9 @@ M.overseer = function()
   end
   local options = {
     task_list = {
-      max_width = { 100, 0.2 },
-      min_width = { 10, 0.1 },
+      width = 0.2,
+      min_width = 0.1,
+      max_width = 0.6,
     },
   }
 
