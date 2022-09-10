@@ -58,7 +58,7 @@ M.general = {
     ["<Down>"] = { 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', opts = { expr = true } },
 
     -- new buffer
-    ["<S-b>"] = { "<cmd> enew <CR>", "new buffer" },
+    ["<leader>b"] = { "<cmd> enew <CR>", "new buffer" },
 
     -- close buffer + hide terminal buffer
     ["<leader>x"] = {
@@ -72,10 +72,13 @@ M.general = {
   t = { ["<C-x>"] = { termcodes "<C-\\><C-N>", "escape terminal mode" } },
 
   v = {
-    ["j"] = { 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', opts = { expr = true } },
-    ["k"] = { 'v:count || mode(1)[0:1] == "no" ? "k" : "gk"', opts = { expr = true } },
     ["<Up>"] = { 'v:count || mode(1)[0:1] == "no" ? "k" : "gk"', opts = { expr = true } },
     ["<Down>"] = { 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', opts = { expr = true } },
+  },
+
+  x = {
+    ["j"] = { 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', opts = { expr = true } },
+    ["k"] = { 'v:count || mode(1)[0:1] == "no" ? "k" : "gk"', opts = { expr = true } },
     -- Don't copy the replaced text after pasting in visual mode
     -- https://vim.fandom.com/wiki/Replace_a_word_with_yanked_text#Alternative_mapping_for_paste
     ["p"] = { 'p:let @+=@0<CR>:let @"=@0<CR>', opts = { silent = true } },
@@ -383,7 +386,7 @@ M.blankline = {
   plugin = true,
 
   n = {
-    ["<leader>bc"] = {
+    ["<leader>cc"] = {
       function()
         local ok, start = require("indent_blankline.utils").get_current_context(
           vim.g.indent_blankline_context_patterns,
