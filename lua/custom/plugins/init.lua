@@ -1,8 +1,11 @@
+local overrides = require "custom.plugins.configs.overrides"
+
 return {
 
   -- enable dashboard
   ["goolord/alpha-nvim"] = {
     disable = false,
+    override_options = overrides.alpha,
   },
   -- smooth scrolling, or use "karb94/neoscroll.nvim"
   ["declancm/cinnamon.nvim"] = {
@@ -48,6 +51,10 @@ return {
       require("custom.plugins.configs.others").bqf()
     end,
   },
+  -- Super fast git decorations implemented purely in lua/teal.
+  ["lewis6991/gitsigns.nvim"] = {
+    override_options = overrides.gitsigns,
+  },
 
   ["neovim/nvim-lspconfig"] = {
     config = function()
@@ -72,7 +79,19 @@ return {
       require("core.utils").load_mappings "lsp_config"
     end,
   },
+  -- A completion plugin for neovim coded in Lua. 
+  ["hrsh7th/nvim-cmp"] = {
+    override_options = overrides.cmp,
+  },
+  -- Portable package manager for Neovim that runs everywhere Neovim runs. 
+  ["williamboman/mason.nvim"] = {
+    override_options = overrides.mason,
+  },
 
+  -- Nvim Treesitter configurations and abstraction layer 
+  ["nvim-treesitter/nvim-treesitter"] = {
+    override_options = overrides.treesitter,
+  },
   -- Rainbow parentheses using treesitter
   ["p00f/nvim-ts-rainbow"] = {
     after = "nvim-treesitter",
@@ -125,7 +144,14 @@ return {
     opt = true,
     run = "npm install --legacy-peer-deps && npm run compile",
   },
-
+  -- Smart and powerful comment plugin for neovim.
+  ["numToStr/Comment.nvim"] = {
+    override_options = overrides.comment,
+  },
+  -- Find, Filter, Preview, Pick. All lua, all the time. 
+  ["nvim-telescope/telescope.nvim"] = {
+    override_options = overrides.telescope,
+  },
   -- Add/change/delete surrounding delimiter pairs with ease
   ["kylechui/nvim-surround"] = {
     opt = true,
@@ -202,3 +228,4 @@ return {
     end,
   },
 }
+
