@@ -1,9 +1,5 @@
 return {
 
-  ["rafamadriz/friendly-snippets"] = {
-    commit = "255903b5f5439a5fa20ae970e8ed09d94925b392",
-  },
-
   -- enable dashboard
   ["goolord/alpha-nvim"] = {
     disable = false,

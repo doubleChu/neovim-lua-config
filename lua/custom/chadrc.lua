@@ -18,6 +18,7 @@ M.plugins = {
     ["numToStr/Comment.nvim"] = overrides.comment,
     ["nvim-telescope/telescope.nvim"] = overrides.telescope,
     ["goolord/alpha-nvim"] = overrides.alpha,
+    ["lewis6991/gitsigns.nvim"] = overrides.gitsigns,
   },
 }
 

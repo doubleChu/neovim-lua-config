@@ -230,6 +230,7 @@ M.telescope = {
   n = {
     ["<leader>fp"] = { "<cmd> Telescope projects <CR>", "Telescope Project View" },
     ["<leader>fn"] = { "<cmd> Telescope harpoon marks <CR>", "Telescope Harpoon mark View" },
+    ["<leader>fg"] = { "<cmd> Telescope grep_string <CR>", "Telescope grep string" },
   },
 }
 

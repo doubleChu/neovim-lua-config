@@ -1,5 +1,9 @@
 local M = {}
 
+-- dynamic header padding
+local fn = vim.fn
+local marginTopPercent = 0.1
+local headerPadding = fn.max { 2, fn.floor(fn.winheight(0) * marginTopPercent) }
 M.alpha = {
   header = {
     val = {
@@ -20,7 +24,7 @@ M.alpha = {
       "⢸⣿⣿⣿⣿⣮⣝⡿⣿⡜⡇⣿⣿⣿⣿⣿⡜⣿⣿⡿⠃⠀⠀⠀⠀⠀⠀⠙⠛⠿⠛⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
     },
   },
-  headerPaddingTop = { type = "padding", val = 4 }
+  headerPaddingTop = { type = "padding", val = headerPadding },
 }
 
 M.cmp = function()
@@ -118,6 +122,10 @@ M.comment = {
 
 M.telescope = {
   extensions_list = { "themes", "terms", "projects", "harpoon" },
+}
+
+M.gitsigns = {
+  current_line_blame = true,
 }
 
 return M
