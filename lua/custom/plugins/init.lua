@@ -144,6 +144,7 @@ return {
     opt = true,
     run = "npm install --legacy-peer-deps && npm run compile",
   },
+
   -- Smart and powerful comment plugin for neovim.
   ["numToStr/Comment.nvim"] = {
     override_options = overrides.comment,
@@ -151,6 +152,11 @@ return {
   -- Find, Filter, Preview, Pick. All lua, all the time. 
   ["nvim-telescope/telescope.nvim"] = {
     override_options = overrides.telescope,
+  },
+  -- FZF sorter for telescope written in c
+  ["nvim-telescope/telescope-fzf-native.nvim"] = {
+    after = "telescope.nvim",
+    run = 'make'
   },
   -- Add/change/delete surrounding delimiter pairs with ease
   ["kylechui/nvim-surround"] = {

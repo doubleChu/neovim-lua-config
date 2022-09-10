@@ -121,7 +121,7 @@ M.comment = {
 }
 
 M.telescope = {
-  extensions_list = { "themes", "terms", "projects", "harpoon" },
+  extensions_list = { "themes", "terms", "projects", "harpoon", "fzf" },
 }
 
 M.gitsigns = {

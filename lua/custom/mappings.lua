@@ -69,8 +69,8 @@ M.operation = {
     ["<"] = { "<gv", "Better indenting left" },
     [">"] = { ">gv", "Better indenting right" },
     -- Move current line / block with Alt-j/k ala vscode.
-    ["<A-j>"] = { "<cmd> m '>+1<CR>gv=gv", "Move text down" },
-    ["<A-k>"] = { "<cmd> m '<-2<CR>gv=gv", "Move text up" },
+    ["<A-j>"] = { ":m '>+1<CR>gv=gv", "Move text down" },
+    ["<A-k>"] = { ":m '<-2<CR>gv=gv", "Move text up" },
   },
 }
 
