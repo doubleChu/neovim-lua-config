@@ -195,7 +195,7 @@ local plugins = {
   ["folke/which-key.nvim"] = {
     disable = true,
     module = "which-key",
-    keys = "<leader>",
+    keys = { "<leader>", '"', "'", "`" },
     config = function()
       require "plugins.configs.whichkey"
     end,
@@ -217,9 +217,7 @@ if present then
   -- load packer init options
   local init_options = require("plugins.configs.others").packer_init()
   init_options = require("core.utils").load_override(init_options, "wbthomason/packer.nvim")
-  packer.init(init_options)
 
-  for _, v in pairs(plugins) do
-    packer.use(v)
-  end
+  packer.init(init_options)
+  packer.startup { plugins }
 end
