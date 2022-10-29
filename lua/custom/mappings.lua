@@ -74,6 +74,29 @@ M.operation = {
   },
 }
 
+M.comment = {
+  plugin = true,
+
+  -- toggle comment in both modes
+  n = {
+    ["<leader>/"] = { "<Nop>", "" },
+    ["<C-_>"] = {
+      function()
+        require("Comment.api").toggle.linewise.current()
+      end,
+      "toggle comment",
+    },
+  },
+
+  v = {
+    ["<leader>/"] = { "<Nop>", "" },
+    ["<C-_>"] = {
+      "<ESC><cmd>lua require('Comment.api').locked('toggle.linewise')(vim.fn.visualmode())<CR>gv",
+      "toggle comment",
+    },
+  },
+}
+
 M.lsp_config = {
   -- lspsaga keymap
   plugin = true,
@@ -180,7 +203,7 @@ M.trouble = {
       "<cmd> TroubleToggle workspace_diagnostics <CR>",
       "workspace diagnostics from the builtin LSP client",
     },
-    ["<leader>td"] = {
+    ["<leader>tdd"] = {
       "<cmd> TroubleToggle document_diagnostics <CR>",
       "document diagnostics from the builtin LSP client",
     },
