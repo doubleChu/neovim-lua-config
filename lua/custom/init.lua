@@ -4,7 +4,7 @@ vim.opt.guifont = (function()
   if vim.fn.has "win32" == 1 then
     gui_font = "CaskaydiaCove NF:h14"
   else
-    gui_font = "CaskaydiaCove Nerd Font:h20"
+    gui_font = "CaskaydiaCove Nerd Font:h14"
   end
   return gui_font
 end)()
@@ -13,6 +13,8 @@ end)()
 if vim.g.neovide then
   vim.g.neovide_transparency = 0.85
   vim.g.neovide_profiler = false
+  vim.g.neovide_remember_window_position = true
+  vim.g.neovide_remember_window_size = true
 end
 
 -- NVUI setting
