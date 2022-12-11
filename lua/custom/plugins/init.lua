@@ -55,6 +55,14 @@ return {
   ["lewis6991/gitsigns.nvim"] = {
     override_options = overrides.gitsigns,
   },
+  -- Single tabpage interface for easily cycling through diffs for all modified files for any git rev.
+  ["sindrets/diffview.nvim"] = {
+    cmd = {'DiffviewOpen', 'DiffviewClose', 'DiffviewToggleFiles',
+           'DiffviewFocusFiles', 'DiffviewRefresh', 'DiffviewFileHistory',
+           'DiffviewLog',
+    },
+    requires = 'nvim-lua/plenary.nvim',
+  },
 
   ["neovim/nvim-lspconfig"] = {
     config = function()
@@ -72,9 +80,9 @@ return {
   -- lsp ui
   ["glepnir/lspsaga.nvim"] = {
     after = "nvim-lspconfig",
-    config = function()
-      require("custom.plugins.configs.others").lspsaga()
-    end,
+    -- config = function()
+    --   require("custom.plugins.configs.others").lspsaga()
+    -- end,
     setup = function()
       require("core.utils").load_mappings "lsp_config"
     end,

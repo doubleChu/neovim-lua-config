@@ -74,7 +74,7 @@ M.operation = {
   },
 }
 
-M.comment = {
+--[[ M.comment = {
   plugin = true,
 
   -- toggle comment in both modes
@@ -95,7 +95,7 @@ M.comment = {
       "toggle comment",
     },
   },
-}
+} ]]
 
 M.lsp_config = {
   -- lspsaga keymap

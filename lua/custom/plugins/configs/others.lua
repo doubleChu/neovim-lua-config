@@ -1,19 +1,13 @@
 local M = {}
 
-M.lspsaga = function()
-  local present, saga = pcall(require, "lspsaga")
-
-  if not present then
-    return
-  end
-
-  saga.init_lsp_saga {
-    -- need neovim 0.8+, not for now
-    -- symbol_in_winbar = {
-    --    in_custom = true,
-    -- },
-  }
-end
+-- M.lspsaga = function()
+--   local present, saga = pcall(require, "lspsaga")
+-- 
+--   if not present then
+--     return
+--   end
+-- 
+-- end
 
 M.dapui = function()
   local present1, dap = pcall(require, "dap")
