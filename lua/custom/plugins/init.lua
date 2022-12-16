@@ -116,42 +116,42 @@ return {
     after = "nvim-treesitter",
   },
 
-  -- Debug Adapter Protocol client
-  ["mfussenegger/nvim-dap"] = {
-    cmd = "DapToggleBreakpoint",
-    config = function()
-      require "custom.plugins.configs.nvim-dap"
-    end,
-    setup = function()
-      require("core.utils").load_mappings "dap_config"
-    end,
-  },
-  -- A UI for nvim-dap
-  ["rcarriga/nvim-dap-ui"] = {
-    after = "nvim-dap",
-    config = function()
-      require("custom.plugins.configs.others").dapui()
-    end,
-  },
-  -- adds virtual text support to nvim-dap
-  ["theHamsta/nvim-dap-virtual-text"] = {
-    after = "nvim-dap",
-    config = function()
-      require("nvim-dap-virtual-text").setup()
-    end,
-  },
-  -- nvim-dap adapter for vscode-js-debug
-  ["mxsdev/nvim-dap-vscode-js"] = {
-    after = "nvim-dap",
-    config = function()
-      require "custom.plugins.configs.nvim-dap-vscode-js"
-    end,
-  },
-  -- The VS Code JavaScript debugger
-  ["microsoft/vscode-js-debug"] = {
-    opt = true,
-    run = "npm install --legacy-peer-deps && npm run compile",
-  },
+  --[[ -- Debug Adapter Protocol client ]]
+  --[[ ["mfussenegger/nvim-dap"] = { ]]
+  --[[   cmd = "DapToggleBreakpoint", ]]
+  --[[   config = function() ]]
+  --[[     require "custom.plugins.configs.nvim-dap" ]]
+  --[[   end, ]]
+  --[[   setup = function() ]]
+  --[[     require("core.utils").load_mappings "dap_config" ]]
+  --[[   end, ]]
+  --[[ }, ]]
+  --[[ -- A UI for nvim-dap ]]
+  --[[ ["rcarriga/nvim-dap-ui"] = { ]]
+  --[[   after = "nvim-dap", ]]
+  --[[   config = function() ]]
+  --[[     require("custom.plugins.configs.others").dapui() ]]
+  --[[   end, ]]
+  --[[ }, ]]
+  --[[ -- adds virtual text support to nvim-dap ]]
+  --[[ ["theHamsta/nvim-dap-virtual-text"] = { ]]
+  --[[   after = "nvim-dap", ]]
+  --[[   config = function() ]]
+  --[[     require("nvim-dap-virtual-text").setup() ]]
+  --[[   end, ]]
+  --[[ }, ]]
+  --[[ -- nvim-dap adapter for vscode-js-debug ]]
+  --[[ ["mxsdev/nvim-dap-vscode-js"] = { ]]
+  --[[   after = "nvim-dap", ]]
+  --[[   config = function() ]]
+  --[[     require "custom.plugins.configs.nvim-dap-vscode-js" ]]
+  --[[   end, ]]
+  --[[ }, ]]
+  --[[ -- The VS Code JavaScript debugger ]]
+  --[[ ["microsoft/vscode-js-debug"] = { ]]
+  --[[   opt = true, ]]
+  --[[   run = "npm install --legacy-peer-deps && npm run compile", ]]
+  --[[ }, ]]
 
   -- Smart and powerful comment plugin for neovim.
   ["numToStr/Comment.nvim"] = {

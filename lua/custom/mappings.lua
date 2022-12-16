@@ -147,52 +147,52 @@ M.lsp_config = {
   },
 }
 
-M.dap_config = {
-  plugin = true,
-
-  n = {
-    -- Debug keymapping
-    ["<leader>tb"] = { "<cmd> DapToggleBreakpoint <CR>", "Toggle Breakpoint" },
-    ["<leader>tc"] = { "<cmd> DapContinue <CR>", "Debug Continue" },
-    ["<F9>"] = { "<cmd> DapStepOver <CR>", "Debug StepOver" },
-    ["<F10>"] = { "<cmd> DapStepInto <CR>", "Debug StepInto" },
-    -- Shift + F10 won't work in TUI Neovim, but can take effect in GUI neoivm
-    ["<leader><F10>"] = { "<cmd> DapStepOut <CR>", "Debug StepOut" },
-    ["<leader><F12>"] = { "<cmd> DapTerminate <CR>", "Debug Terminate" },
-    ["<F12>"] = {
-      function()
-        require("dap").run_last()
-      end,
-      "Debug Restart",
-    },
-    ["<leader>te"] = {
-      function()
-        require("dapui").eval()
-      end,
-      "Debug Evaluate Expression",
-    },
-    ["<leader>tf"] = {
-      function()
-        require("dapui").float_element()
-      end,
-      "Debug Float Element",
-    },
-    ["<leader>trb"] = {
-      function()
-        require("dap").clear_breakpoints()
-      end,
-      "Removes all breakpoints",
-    },
-  },
-  v = {
-    ["<leader>te"] = {
-      function()
-        require("dapui").eval()
-      end,
-      "Debug Evaluate Expression",
-    },
-  },
-}
+--[[ M.dap_config = { ]]
+--[[   plugin = true, ]]
+--[[]]
+--[[   n = { ]]
+--[[     -- Debug keymapping ]]
+--[[     ["<leader>tb"] = { "<cmd> DapToggleBreakpoint <CR>", "Toggle Breakpoint" }, ]]
+--[[     ["<leader>tc"] = { "<cmd> DapContinue <CR>", "Debug Continue" }, ]]
+--[[     ["<F9>"] = { "<cmd> DapStepOver <CR>", "Debug StepOver" }, ]]
+--[[     ["<F10>"] = { "<cmd> DapStepInto <CR>", "Debug StepInto" }, ]]
+--[[     -- Shift + F10 won't work in TUI Neovim, but can take effect in GUI neoivm ]]
+--[[     ["<leader><F10>"] = { "<cmd> DapStepOut <CR>", "Debug StepOut" }, ]]
+--[[     ["<leader><F12>"] = { "<cmd> DapTerminate <CR>", "Debug Terminate" }, ]]
+--[[     ["<F12>"] = { ]]
+--[[       function() ]]
+--[[         require("dap").run_last() ]]
+--[[       end, ]]
+--[[       "Debug Restart", ]]
+--[[     }, ]]
+--[[     ["<leader>te"] = { ]]
+--[[       function() ]]
+--[[         require("dapui").eval() ]]
+--[[       end, ]]
+--[[       "Debug Evaluate Expression", ]]
+--[[     }, ]]
+--[[     ["<leader>tf"] = { ]]
+--[[       function() ]]
+--[[         require("dapui").float_element() ]]
+--[[       end, ]]
+--[[       "Debug Float Element", ]]
+--[[     }, ]]
+--[[     ["<leader>trb"] = { ]]
+--[[       function() ]]
+--[[         require("dap").clear_breakpoints() ]]
+--[[       end, ]]
+--[[       "Removes all breakpoints", ]]
+--[[     }, ]]
+--[[   }, ]]
+--[[   v = { ]]
+--[[     ["<leader>te"] = { ]]
+--[[       function() ]]
+--[[         require("dapui").eval() ]]
+--[[       end, ]]
+--[[       "Debug Evaluate Expression", ]]
+--[[     }, ]]
+--[[   }, ]]
+--[[ } ]]
 
 M.trouble = {
   plugin = true,
