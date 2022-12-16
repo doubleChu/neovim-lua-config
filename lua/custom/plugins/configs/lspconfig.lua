@@ -15,8 +15,12 @@ local servers = {
 }
 
 for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
+  local lsp_setup = {
     on_attach = on_attach,
     capabilities = capabilities,
   }
+  if lsp == "emmet_ls" then
+    lsp_setup.filetypes = { "css", "sass", "scss", "less" }
+  end
+    lspconfig[lsp].setup(lsp_setup)
 end

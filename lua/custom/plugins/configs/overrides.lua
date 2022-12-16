@@ -37,7 +37,7 @@ M.cmp = function()
       ["<Tab>"] = cmp.mapping(function(fallback)
         if cmp.visible() then
           cmp.confirm {
-            behavior = cmp.ConfirmBehavior.Replace,
+            behavior = cmp.ConfirmBehavior.Insert,
             select = true,
           }
         elseif require("luasnip").expand_or_jumpable() then
@@ -57,7 +57,7 @@ M.treesitter = {
   rainbow = {
     enable = true,
     -- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
-    extended_mode = false, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
+    extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
     max_file_lines = 1000, -- Do not enable for files with more than n lines, int
     -- colors for theme everforest
     colors = {
@@ -90,14 +90,13 @@ M.mason = {
     "html-lsp",
     "typescript-language-server",
     "eslint-lsp",
-    "deno",
     "prettier",
     "emmet-ls",
     "json-lsp",
 
     -- shell
-    "shfmt",
-    "shellcheck",
+    -- "shfmt",
+    -- "shellcheck",
   },
 }
 

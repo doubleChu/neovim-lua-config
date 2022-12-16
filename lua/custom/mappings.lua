@@ -1,21 +1,21 @@
 local M = {}
 
 M.snippets = {
-  n = {
-    ["cll"] = {
-      "yiwoconsole.log({})<Esc>==F{p",
-      "正常模式中的console.log，在下一行上插入括号内的单词",
-    },
-  },
-  i = {
-    ["cll"] = { "console.log({})<Esc>==F{a", "插入模式中的console.log，焦点放在括号内" },
-  },
-  v = {
-    ["cll"] = {
-      "yoconsole.log({})<Esc>==F{p",
-      "可视模式中的console.log，在下一行输出选中的内容",
-    },
-  },
+  -- n = {
+  --   ["cll"] = {
+  --     "yiwoconsole.log({})<Esc>==F{p",
+  --     "正常模式中的console.log，在下一行上插入括号内的单词",
+  --   },
+  -- },
+  -- i = {
+  --   ["cll"] = { "console.log({})<Esc>==F{a", "插入模式中的console.log，焦点放在括号内" },
+  -- },
+  -- v = {
+  --   ["cll"] = {
+  --     "yoconsole.log({})<Esc>==F{p",
+  --     "可视模式中的console.log，在下一行输出选中的内容",
+  --   },
+  -- },
 }
 
 M.mswin = {
@@ -115,16 +115,16 @@ M.lsp_config = {
       "<cmd> Lspsaga diagnostic_jump_next <CR>",
       "   goto_next",
     },
-    ["<leader>ra"] = {
-      "<cmd> Lspsaga rename <CR>",
-      "   lsp rename",
+    ["<leader>f"] = {
+      "<cmd> Lspsaga show_cursor_diagnostics <CR>",
+      "   show diagnostics",
     },
     ["<leader>d"] = {
-      "<cmd> Lspsaga preview_definition <CR>",
-      "   lsp preview definition",
+      "<cmd> Lspsaga peek_definition <CR>",
+      "   lsp peek definition",
     },
     ["<leader>lo"] = {
-      "<cmd> LSoutlineToggle <CR>",
+      "<cmd> Lspsaga outline <CR>",
       "   lsp outline",
     },
   },
